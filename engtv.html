@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %} News {% endblock %}
+{% block tvname %} {{ tv.name }} {% endblock %}
+{% block menu %}
+        <ul class='nav navbar-nav'>
+            <li class='active'><a herf='/'>HOME</a></li>
+            <li><a href="{% url 'entv-url' 0 %}">Sky News</a></li>
+            <li><a href="{% url 'entv-url' 1 %}">Euro News</a></li>
+            <li><a href="{% url 'entv-url' 2 %}">India News</a></li>
+        </ul>
+{% endblock %}
+{% block content %}
+        <div class="container">
+            <div id="tvcode" align="center">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/{{ tv.tvcode }}"
+                title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media;
+                gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+        </div>
+{% endblock %}
